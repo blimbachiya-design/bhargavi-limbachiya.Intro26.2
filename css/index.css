@@ -1,0 +1,88 @@
+
+body {
+    background-color: #f3f0e7;
+    color: #333;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin: 0;
+    padding: 19px;
+}
+
+nav {
+    background-color: #efc931;
+    padding: 16px;
+    text-align: center;
+}
+
+nav a {
+    color: #f3f0f0;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #330f0f;
+}
+
+h1 {
+    color: #9eb1ef;
+    text-align: center;
+    font-size: 45px;
+    margin-top: 30px;
+}
+
+h2 {
+    color: #d99eef;
+    margin-top: 20px;
+    border-bottom: 2px solid #d99eef;
+    padding-bottom: 5px;
+}
+
+section {
+    margin: 22px 0;
+    padding: 17px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#Experience ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding:0%;
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+#Experience li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    list-style-type: square;
+    margin-bottom: 10px;
+}
+
+#Connections ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding:0%;
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+#Connections li {
+    background-color: #d3bebe;
+    padding: 10px;
+    border-radius: 5px;
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+#Connections li a {
+    color: #660606c8;
+    text-decoration: none;
+    font-weight: bold;
+}
