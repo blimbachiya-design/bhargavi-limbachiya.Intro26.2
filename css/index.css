@@ -88,14 +88,14 @@ section {
     font-weight: bold;
 }
 
-#Skills ul {
+#skills ul {
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
     padding:0%;
 }
 
-#Skills li {
+#skills li {
     background-color: #d3bebe;
     padding: 10px 15px;
     border-radius: 5px;
