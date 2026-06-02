@@ -55,6 +55,9 @@ fetch('https://api.github.com/users/blimbachiya-design/repos')
 
 .then(data => {
     const repositories = data;
+
+    console.log(repositories);
+
     const projectSection = document.getElementById('Projects');
     const projectList = projectSection.querySelector('ul');
     for (let i = 0; i < repositories.length; i++) {
@@ -66,4 +69,9 @@ fetch('https://api.github.com/users/blimbachiya-design/repos')
 
 .catch(error => {
     console.error("Error fetching repositories:", error);
+
+    const projectSection = document.getElementById('Projects');
+    const errorMessage = document.createElement('p');
+    errorMessage.innerText = 'Unable to load projects at this time.';
+    projectSection.appendChild(errorMessage);
 });
