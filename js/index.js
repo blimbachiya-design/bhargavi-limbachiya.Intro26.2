@@ -46,3 +46,24 @@ messageForm.addEventListener('submit', function(event) {
 
     messageForm.reset();
 });
+
+fetch('https://api.github.com/users/blimbachiya-design/repos')
+
+.then(response => {
+    return response.json();
+})
+
+.then(data => {
+    const repositories = data;
+    const projectSection = document.getElementById('Projects');
+    const projectList = projectSection.querySelector('ul');
+    for (let i = 0; i < repositories.length; i++) {
+        const project = document.createElement('li');
+        project.innerHTML = `<a href="${repositories[i].html_url}" target="_blank">${repositories[i].name}</a>`;
+        projectList.appendChild(project);
+    }
+})
+
+.catch(error => {
+    console.error("Error fetching repositories:", error);
+});
