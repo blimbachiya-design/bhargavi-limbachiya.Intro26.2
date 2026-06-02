@@ -9,9 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
 </head>
-
 <body>
 
+     <nav>
+        <a href="#About">About</a>
+        <a href="#Experience">Experience</a>
+        <a href="#skills">Skills</a> 
+        <a href="#Projects">Projects</a>
+        <a href="#Connect">Connect</a>
+    </nav>
+    
     <h1>Bhargavi Limbachiya</h1>
 
     <section id="About">
@@ -29,7 +36,7 @@
         </ul>
     </section>
 
-    <section id="Skills">
+    <section id="skills">
         <h2>Skills</h2>
 
         <ul>
@@ -50,18 +57,6 @@
         </ul>
     </section>
 
-    <nav>
-        <a href="#About">About</a>
-        <a href="#Experience">Experience</a>
-        <a href="#Skills">Skills</a> 
-        <a href="#Projects">Projects</a>
-        <a href="#Connect">Connect</a>
-    </nav>
-
-    <section id="Skills">
-        <h2>Skills</h2>
-    </section>
-
     <section id="Projects">
         <h2>Projects</h2>
                 
@@ -69,7 +64,28 @@
         </ul>
     </section>
 
+    <section id="leave-message">
+        <h2>Leave a Message</h2>
+
+        <form name="leave_message" id="leave_message">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="usersName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="usersEmail" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="usersMessage" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section id="messages">
+        <h2>Messages</h2>
+        <ul></ul>
+    </section>
+
     <script src="js/index.js"></script>
 </body>
-
-</html>
+</html
