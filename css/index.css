@@ -87,3 +87,18 @@ section {
     text-decoration: none;
     font-weight: bold;
 }
+
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding:0%;
+}
+
+#skills li {
+    background-color: #d3bebe;
+    padding: 10px 15px;
+    border-radius: 5px;
+    list-style-type: none;
+    margin-bottom: 10px;
+}
