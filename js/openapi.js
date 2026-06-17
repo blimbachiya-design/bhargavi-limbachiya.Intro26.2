@@ -19,3 +19,26 @@ button.addEventListener('click', function() {
             container.innerHTML = `<p>😿 Sorry! We couldn't load a cat right now.</p>`;
         });
 });
+
+const breedButton = document.getElementById('breed-btn');
+breedButton.addEventListener('click', function() {
+    fetch('https://api.thecatapi.com/v1/breeds')
+        .then(response => response.json())
+        .then(data => {
+            const randomIndex = (max) => Math.floor(Math.random() * data.length);
+            const breed = data[randomIndex(data.length)];
+            const container = document.getElementById('cat-container');
+            container.innerHTML = `
+                <h2>🐱 ${breed.name}</h2>
+                <p>${breed.description}</p>
+                <p><strong>Temperament:</strong> ${breed.temperament}</p>
+                <p><strong>Origin:</strong> ${breed.origin}</p> 
+                <p><strong>Life Span:</strong> ${breed.life_span} years</p>
+            `;
+        })
+        .catch(error => {
+            console.error('Error fetching cat breeds:', error);
+            const container = document.getElementById('cat-container');
+            container.innerHTML = `<p>😿 Sorry! We couldn't load cat breeds right now.</p>`;
+        });
+});
