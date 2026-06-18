@@ -5,7 +5,7 @@ const today = new Date();
 const thisYear = today.getFullYear();
 const footerElement = document.querySelector('footer');
 const copyright = document.createElement('p');
-    copyright.innerHTML = `
+    copyright.textContent = `
         Bhargavi Limbachiya. All rights reserved. © ${thisYear}.
         <br>
         | Built with HTML •  CSS •  and JavaScript. |`;
@@ -57,6 +57,22 @@ messageForm.addEventListener('submit', function(event) {
 
     messageForm.reset();
 });
+
+const editButton = document.getElementById('edit-btn');
+editButton.textContent = 'Edit';
+editButton.type = 'button';
+editButton.addEventListener('click', function() {
+    const updatedMessage = prompt('Edit your message:');
+        messageText.textContent.replace(/: .*/, `: ${updatedMessage}`);
+    if (updatedMessage) {
+        const messageText = editButton.previousSibling;
+        messageText.textContent = `: ${updatedMessage}`;
+    }
+});
+
+newMessage.appendChild(editButton);
+newMessage.appendChild(removeButton);
+messageList.appendChild(newMessage);
 
 fetch('https://api.github.com/users/blimbachiya-design/repos')
     .then(response => response.json())
