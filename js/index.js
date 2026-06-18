@@ -84,7 +84,7 @@ fetch('https://api.github.com/users/blimbachiya-design/repos')
     .then(response => response.json())
     .then(data => {
         const repos = data;
-        console.log(repos);
+        
         const projectSection = document.getElementById('projects');
         const projectList = projectSection.querySelector('ul');
         for (let i = 0; i < repos.length; i++) {
