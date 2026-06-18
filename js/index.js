@@ -5,7 +5,7 @@ const today = new Date();
 const thisYear = today.getFullYear();
 const footerElement = document.querySelector('footer');
 const copyright = document.createElement('p');
-    copyright.innerHTML = `
+    copyright.textContent = `
         Bhargavi Limbachiya. All rights reserved. © ${thisYear}.
         <br>
         | Built with HTML •  CSS •  and JavaScript. |`;
@@ -29,11 +29,13 @@ messageForm.addEventListener('submit', function(event) {
     const usersEmail = event.target.usersEmail.value;
     const usersMessage = event.target.usersMessage.value;
 
-    console.log(usersName, usersEmail, usersMessage);
 
     const messageSection = document.getElementById('messages');
-    const messageList = messageSection.querySelector('ul');
+
+    const messageList = messageSection.querySelector('#messages ul');
+
     const newMessage = document.createElement('li');
+
     const nameLink = document.createElement('a');
     nameLink.href = `mailto:${usersEmail}`;
     nameLink.textContent = usersName;
@@ -41,22 +43,42 @@ messageForm.addEventListener('submit', function(event) {
     const messageText = document.createElement('span');
     messageText.textContent = `: ${usersMessage}`;
 
-    newMessage.appendChild(nameLink);
-    newMessage.appendChild(messageText);
+    const editButton = document.createElement('button');
+    editButton.textContent = 'Edit';
+
+    editButton.addEventListener('click', function() {
+        const newName = prompt('Edit your name:', nameLink.textContent);
+        const newEmail = prompt('Edit your email:', nameLink.href.replace('mailto:', ''));
+
+        const newMessageText = prompt('Edit your message:', messageText.textContent.replace(': ', ''));
+        
+        if (newName) {
+            nameLink.textContent = newName;
+        }
+        if (newEmail) {
+            nameLink.href = `mailto:${newEmail}`;
+        }
+        if (newMessageText) {
+            messageText.textContent = `: ${newMessageText}`;
+        }
+    });
 
     const removeButton = document.createElement('button');
     removeButton.textContent = 'Remove';
-    removeButton.type = 'button';
+    
     removeButton.addEventListener('click', function() {
-        const entry = removeButton.parentNode;
-        entry.remove();
-    });
+        newMessage.remove();
+    });    
 
+    newMessage.appendChild(nameLink);
+    newMessage.appendChild(messageText);
+    newMessage.appendChild(editButton);
     newMessage.appendChild(removeButton);
+
     messageList.appendChild(newMessage);
 
     messageForm.reset();
-});
+}); 
 
 fetch('https://api.github.com/users/blimbachiya-design/repos')
     .then(response => response.json())

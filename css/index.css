@@ -45,7 +45,7 @@ h1 {
 
 #hero {
     text-align: center;
-    background-color: #e0c1c1;
+    background-color: #f3edff;
     padding: 30px;
     border-radius: 12px;
     margin-top: 30px;
@@ -73,7 +73,7 @@ section {
     background: #ffffff;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition:cubic-bezier(1, 0, 0, 1) 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 section:hover {
@@ -184,6 +184,13 @@ section:hover {
     font-weight: 500;
 }
 
+#skills li:hover {
+    background-color: #d99eef;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 #projects ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -203,6 +210,18 @@ section:hover {
 #projects li:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+#projects a{
+    text-decoration: none;
+    color: #6748b4;
+    font-weight: 600;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+#projects a:hover {
+    color: #9785ba;
 }
 
 a {
@@ -231,7 +250,10 @@ form {
     margin: 0 auto;
 }
 
-input, textarea {
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #baa7ea;
+    box-shadow: 0 0 5px rgba(103, 72, 180, 0.5);
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -255,6 +277,33 @@ button:hover {
     transform: translateY(-2px);
 }
 
+#messages button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    margin: 10px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#messages li {
+    background-color: #f9f9f9;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 15px;
+    gap: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    list-style-type: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 footer {
     text-align: center;
     padding: 35px;
@@ -275,9 +324,7 @@ footer p {
 
 footer p:last-child {
     margin-top: 10px;
-    margin: 0;
     font-size: 14px;
     color: #666;
-    line-height: 1.6;
     font-style: italic;
 }

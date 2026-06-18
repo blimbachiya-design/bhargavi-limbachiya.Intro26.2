@@ -8,9 +8,12 @@ button.addEventListener('click', function() {
             const container = document.getElementById('cat-container');
             container.innerHTML = `
                 <img src="${cat.url}" alt="A cute cat">
+
                 <h3>Image Information</h3>
-                <p>Width: ${cat.width}pixels</p>
-                <p>Height: ${cat.height}pixels</p>
+
+                <p>Width: ${cat.width} pixels</p>
+                
+                <p>Height: ${cat.height} pixels</p>
             `;
         })
         .catch(error => {
@@ -25,7 +28,7 @@ breedButton.addEventListener('click', function() {
     fetch('https://api.thecatapi.com/v1/breeds')
         .then(response => response.json())
         .then(data => {
-            const randomIndex = (max) => Math.floor(Math.random() * data.length);
+            const randomIndex = (max) => Math.floor(Math.random() * max);
             const breed = data[randomIndex(data.length)];
             const container = document.getElementById('cat-container');
             container.innerHTML = `
