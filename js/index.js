@@ -5,7 +5,7 @@ const today = new Date();
 const thisYear = today.getFullYear();
 const footerElement = document.querySelector('footer');
 const copyright = document.createElement('p');
-    copyright.textContent = `
+    copyright.innerHTML = `
         Bhargavi Limbachiya. All rights reserved. © ${thisYear}.
         <br>
         | Built with HTML •  CSS •  and JavaScript. |`;
